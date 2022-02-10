@@ -1,1 +1,1 @@
-https://dreamy-goodall-32e54d.netlify.app/
+https://yaromchikv-shirts.netlify.app
