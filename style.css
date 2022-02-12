@@ -1,1 +1,103 @@
-/* Your Code Here */
+body {
+    font-family: 'Catamaran', sans-serif;
+    background-color: #0d193f;
+}
+.wrapper {
+    max-width: 1000px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+.header {
+    background-color: #fff;
+}
+.header-top {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 20px 0;
+}
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 0px;
+    padding-top: 15px;
+    padding-bottom: 12px;
+}
+.nav > li > a {
+    text-decoration: none;
+    color: #1d3362;
+    transition: 0.2s ease;
+}
+.nav > li > a:hover {
+    color: #efefef;
+}
+.logo {
+    color: #1d3362;
+    font-size: 36px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    letter-spacing: 3px;
+}
+.logo-image {
+    display: block;
+    width: 124px;
+    height: 50px;
+    background-size: cover;
+    background-image: url(../site_images/logo.png);
+    margin-right: 20px;
+    background-repeat: no-repeat;
+}
+.header-bottom {
+    background-color: #7490b8;
+}
+.header-bottom .nav {
+    margin: 0;
+}
+.banner {
+    background-image: url(../site_images/home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 190px;
+    padding-bottom: 196px;
+    color: #efefef;
+}
+.catalog {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #fff;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px 45px;
+}
+.grid-bg {
+    background-color: #efefef;
+    color: #1d3362;
+    padding: 30px 40px;
+    border: #0d193f;
+    border-style: solid;
+    border-radius: 15px;
+}
+.grid-bg h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.grid-bg p {
+    line-height: 1.5;
+    margin-bottom: auto;
+    text-align: justify;
+}
+#footer > li > a {
+    color: #efefef;
+}
+#footer > li > a:hover {
+    color: #1d3362;
+}
