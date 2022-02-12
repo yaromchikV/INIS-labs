@@ -69,7 +69,15 @@ body {
     background-position: center center;
     padding-top: 190px;
     padding-bottom: 196px;
-    color: #efefef;
+}
+.banner-bg {
+    background-color: #fff;
+}
+#not-implemented {
+    background-image: url(../site_images/not_implemented.png);
+    background-size: contain;
+    padding-top: 220px;
+    padding-bottom: 300px;
 }
 .catalog {
     padding-top: 25px;
