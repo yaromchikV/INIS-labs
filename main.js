@@ -1,11 +1,33 @@
-// NOTE: The variable "shirts" is defined in the shirts.js file as the full list of shirt offerings
-//       You can access this variable here, and should use this variable here to build your webpages
-
 let initProducts = () => {
-    // To see the shirts object, run:
-    // console.log(shirts);
+    const json = JSON.stringify(shirts)
+    const obj = JSON.parse(json)
+    const entries = Object.values(obj)
 
-    // Your Code Here
+    let code = ""
+    for (i = 0; i < entries.length; i++) {
+        const name = entries[i]['name']
+        const price = entries[i]['price']
+        
+        const colors = Object.values(entries[i]['colors'])
+        const image = colors[0]['front']
+        const colorNumber = colors.length
+
+        code +=
+            `<div class="catalog-grid-item">
+            <div class="catalog-background">
+                <img src=`+ image + `>
+                <p class="catalog-grid-title">`+ name + `</p>
+                <p class="catalog-grid-description">Available in `+ colorNumber + ` colors</p>
+                <p class="catalog-grid-price">`+ price + `</p>
+                <div class="buttons">
+                    <a class="catalog-grid-btn" href="#">Quick View</a>
+                    <a class="catalog-grid-btn" href="#">See Page</a>
+                </div>
+            </div>
+        </div>`
+    }
+
+    document.getElementById('page-title').insertAdjacentHTML("afterend", code)
 };
 
 let initDetails = () => {
