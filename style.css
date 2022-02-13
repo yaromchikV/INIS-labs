@@ -30,11 +30,9 @@ body {
 
 .nav {
     display: flex;
-    justify-content: space-evenly;
     list-style-type: none;
-    padding: 0px;
-    padding-top: 15px;
-    padding-bottom: 12px;
+    padding: 15px 0px 12px 0px;
+    justify-content: space-around;
 }
 
 .nav>li>a {
@@ -78,6 +76,14 @@ body {
 
 .header-bottom .nav {
     margin: 0;
+}
+
+#footer>li>a {
+    color: #efefef;
+}
+
+#footer>li>a:hover {
+    color: #1d3362;
 }
 
 .banner {
@@ -132,15 +138,6 @@ body {
     margin-bottom: auto;
     text-align: justify;
 }
-
-#footer>li>a {
-    color: #efefef;
-}
-
-#footer>li>a:hover {
-    color: #1d3362;
-}
-
 
 /*  */
 
@@ -208,7 +205,7 @@ body {
     text-align: center;
 }
 
-.catalog-grid-btn {
+.catalog-background .buttons>a {
     border-radius: 50px;
     border: 2px solid #1d3362;
     background-color: #1d3362;
@@ -220,7 +217,91 @@ body {
     margin: 0px 1px 0px 1px;
 }
 
-.catalog-grid-btn:hover {
+.catalog-background .buttons>a:hover {
+    background-color: #fff;
+    color: #0d193f;
+}
+
+/*  */
+
+.details {
+    padding-top: 25px;
+    padding-bottom: 35px;
+    background-color: #fff;
+}
+
+.details-grid {
+    color: #0d193f;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px 15px;
+}
+
+#details-title {
+    font-size: 30px;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.details-grid-item {
+    text-align: start;
+}
+
+.details-grid-info {
+    padding: 0px 20px 0px 20px;
+    grid-column: 2 / 4;
+    grid-row: 2 / 2;
+}
+
+.details-grid-item .details-background {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.details-background>img {
+    width: 314px;
+    border-radius: 15px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.details-grid-price {
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.details-grid-description {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.details-background .items {
+    display: flex;
+    align-items: baseline;
+    margin-top: 20px;
+}
+
+.details-background .items .items-title {
+    color: #1d3362;
+    margin-right: 10px;
+}
+
+.details-background .items>a {
+    border-radius: 13px;
+    border: 2px solid;
+    border-color: #1d3362;
+    background-color: #1d3362;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+    padding: 2px 20px;
+    margin: 0px 10px 0px 0px;
+}
+
+.details-background .items>a:hover {
     background-color: #fff;
     color: #0d193f;
 }
