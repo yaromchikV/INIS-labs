@@ -32,7 +32,7 @@ body {
     display: flex;
     list-style-type: none;
     padding: 15px 0px 12px 0px;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .nav>li>a {
@@ -302,6 +302,124 @@ body {
 }
 
 .details-background .items>a:hover {
+    background-color: #fff;
+    color: #0d193f;
+}
+
+/*  */
+
+#modal {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#modal:target {
+    display: block;
+}
+
+#modal-window {
+    width: 820px;
+    height: 380px;
+    text-align: center;
+    border-radius: 10px;
+    color: #0d193f;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #fff;
+    box-shadow: 0px 0px 10px #fff;
+}
+
+#modal-window-header {
+    display: flex;
+    padding: 10px 25px 5px 30px;
+    justify-content: space-between;
+}
+
+#modal-window-title {
+    font-size: 30px;
+}
+
+.modal-window-close {
+    display: inline-block;
+    color: #0d193f;
+    text-decoration: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-window-close:hover {
+    color: #1d3362;
+}
+
+.modal-window-grid {
+    color: #0d193f;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0px 20px 0px 20px;
+}
+
+.modal-window-grid-info {
+    padding: 0px 15px 0px 15px;
+    grid-column: 2 / 4;
+}
+
+.modal-window-grid>img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.modal-window-grid-price {
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.modal-window-grid-description {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.modal-window-grid-info {
+    text-align: start;
+}
+
+.modal-window-grid-info .items {
+    display: flex;
+    align-items: baseline;
+    margin-top: 20px;
+}
+
+.modal-window-grid-info .items .items-title {
+    color: #1d3362;
+    margin-right: 10px;
+}
+
+.modal-window-grid-info .items>a {
+    border-radius: 13px;
+    border: 2px solid;
+    border-color: #1d3362;
+    background-color: #1d3362;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s ease;
+    cursor: pointer;
+    padding: 2px 20px;
+    margin: 0px 10px 0px 0px;
+}
+
+.modal-window-grid-info .items>a:hover {
     background-color: #fff;
     color: #0d193f;
 }

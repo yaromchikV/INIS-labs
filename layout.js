@@ -5,6 +5,7 @@ const header = `<header>
       <a class="logo" href="index.html">
         <span class="logo-image"></span>
         <span>Инженерная психология (ИНИС)</span>
+      </a>
       </div>
     </div>
   </div>
