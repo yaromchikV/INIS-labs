@@ -1,1 +1,1 @@
-https://yaromchikv-shirts.netlify.app
+https://shirtsshirtsshirts.netlify.app/
