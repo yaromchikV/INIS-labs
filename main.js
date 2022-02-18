@@ -19,7 +19,6 @@ let initProducts = () => {
     for (i = 0; i < entries.length; i++) {
         const name = entries[i]['name']
         const price = entries[i]['price']
-
         const colors = Object.values(entries[i]['colors'])
         const image = colors[0]['front']
         const colorNumber = colors.length
@@ -40,18 +39,17 @@ let initProducts = () => {
     }
 
     document.getElementById('page-title').insertAdjacentHTML("afterend", code)
-
     document.addEventListener('click', function (e) {
         if (e.target.className == 'see-page') {
             localStorage.setItem('selected-item', e.target.id)
         }
         else if (e.target.className == 'quick-view') {
-            initQuickView(entries[e.target.id])
+            initQuickView(entries[e.target.id], e.target.id)
         }
-    }, false);
+    }, false)
 };
 
-let initQuickView = (entry) => {
+let initQuickView = (entry, id) => {
     selectedSide = "front"
     selectedColor = "white"
 
@@ -68,14 +66,14 @@ let initQuickView = (entry) => {
                                 <img id="image" src=`+ colorItems.get(selectedColor)[selectedSide] + `>
                                 <div class="modal-window-grid-info">
                                     <p class="modal-window-grid-price">`+ entry['price'] + `</p>
-                                    <p class="modal-window-grid-description">`+ entry['description'] + `</p>
+                                    <p class="modal-window-grid-description">Available in `+ colorItems.size + ` colors</p>
                                     <div class="items">
                                         <p class="items-title">Side:</p>
                                         <a id="front">Front</a>
                                         <a id="back">Back</a>
                                     </div>
                                     <div class="items">
-                                        <p class="items-title">Color:</p>
+                                        <a id="quick-see-page" href="details.html">See Page</a>
                                     </div>
                                 </div>
                             </div>
@@ -86,12 +84,11 @@ let initQuickView = (entry) => {
     document.getElementsByClassName('wrapper')[0].insertAdjacentHTML("afterbegin", code)
 
     setFrontBackClickListeners()
-
-    const colors = Object.keys(entry['colors'])
-    const elements = getColorButtons(colors)
-    for (i = 0; i < elements.length; i++) {
-        document.getElementsByClassName('items')[1].appendChild(elements[i])
-    }
+    document.addEventListener('click', function (e) {
+        if (e.target.id == 'quick-see-page') {
+            localStorage.setItem('selected-item', id)
+        }
+    }, false)
 }
 
 let initDetails = () => {
@@ -129,12 +126,7 @@ let initDetails = () => {
     document.getElementsByClassName('details-grid')[0].insertAdjacentHTML("afterbegin", code)
 
     setFrontBackClickListeners()
-
-    const colors = Object.keys(entry['colors'])
-    const elements = getColorButtons(colors)
-    for (i = 0; i < elements.length; i++) {
-        document.getElementsByClassName('items')[1].appendChild(elements[i])
-    }
+    setupColorButtons(entry)
 };
 
 const setFrontBackClickListeners = () => {
@@ -149,13 +141,18 @@ const setFrontBackClickListeners = () => {
     });
 }
 
+const setupColorButtons = (entry) => {
+    const colors = Object.keys(entry['colors'])
+    const elements = getColorButtons(colors)
+    for (i = 0; i < elements.length; i++) {
+        document.getElementsByClassName('items')[1].appendChild(elements[i])
+    }
+}
+
 const getColorButtons = (colors) => {
     const listOfELements = new Array()
 
-    const capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1)
-
-    }
+    const capitalizeFirstLetter = (string) => { return string.charAt(0).toUpperCase() + string.slice(1) }
     const setupColors = (elem, backgroundColor, color) => {
         elem.style.color = color
         elem.style.backgroundColor = backgroundColor

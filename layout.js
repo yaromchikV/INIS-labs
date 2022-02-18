@@ -31,6 +31,7 @@ const footer = `<footer>
     <li><a href="not_implemented.html">Private Policy</a></li>
     <li><a href="not_implemented.html">Careers</a></li>
     <li><a href="not_implemented.html">Reviews</a></li>
+    <li><p>Designed by Vladislav Yaromchik</p></li>
   </ul>
 </div>
 </div>
