@@ -21,7 +21,7 @@ const header = `<header>
     </div>
   </div>
 </div>
-</header>`
+</header>`;
 
 const footer = `<footer>
 <div class="wrapper">
@@ -35,7 +35,7 @@ const footer = `<footer>
   </ul>
 </div>
 </div>
-</footer>`
+</footer>`;
 
-document.querySelector("body").insertAdjacentHTML("afterbegin", header)
-document.querySelector("body").insertAdjacentHTML("beforeend", footer)
+document.querySelector("body").insertAdjacentHTML("afterbegin", header);
+document.querySelector("body").insertAdjacentHTML("beforeend", footer);
