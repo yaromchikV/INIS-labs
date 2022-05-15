@@ -63,23 +63,6 @@ for (let i = 0; i < targets.length; i++) {
             targets[i].style.left = e.pageX - positionX + 'px';
         }
     });
-    targets[i].addEventListener('dragstart', (e) => {
-        console.log('target ' + i + ' dragstart');
-
-        positionX = e.offsetX;
-        positionY = e.offsetY;
-    });
-    targets[i].addEventListener('dragend', (e) => {
-        console.log('target ' + i + ' dragend');
-
-        if (drop) {
-            targets[i].style.top = e.pageY - positionY + 'px';
-            targets[i].style.left = e.pageX - positionX + 'px';
-            drop = false;
-        }
-    });
-
-
     targets[i].addEventListener('touchmove', (e) => {
         var touch1 = e.targetTouches[0];
         var touch2 = e.targetTouches[1];
@@ -128,12 +111,27 @@ for (let i = 0; i < targets.length; i++) {
         console.log('target ' + i + ' touchend');
 
         if (e.targetTouches.length == 2) {
-            terr = false;
             workSpace.ontouchmove = null;
+            terr = false;
         }
         else {
             terr = true;
         }
         position = false;
+    });
+    targets[i].addEventListener('dragstart', (e) => {
+        console.log('target ' + i + ' dragstart');
+
+        positionX = e.offsetX;
+        positionY = e.offsetY;
+    });
+    targets[i].addEventListener('dragend', (e) => {
+        console.log('target ' + i + ' dragend');
+
+        if (drop) {
+            targets[i].style.top = e.pageY - positionY + 'px';
+            targets[i].style.left = e.pageX - positionX + 'px';
+            drop = false;
+        }
     });
 }
