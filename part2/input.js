@@ -18,17 +18,17 @@ for (let i = 0; i < targets.length; i++) {
         workSpace.ontouchmove = null;
         targets[i].style.background = 'red';
     });
-    // workSpace.addEventListener('touchstart', (e) => {
-    //     console.log('workspace touchstart (position = ' + position + ')');
+    workSpace.addEventListener('touchstart', (e) => {
+        console.log('workspace touchstart (position = ' + position + ')');
 
-    //     if (position) {
-    //         element.style.top = touchPositionY;
-    //         element.style.left = touchPositionX;
-    //         position = false;
-    //         e.targetTouches[0] = null;
-    //         e.targetTouches[1] = null;
-    //     }
-    // });
+        if (position) {
+            element.style.top = touchPositionY;
+            element.style.left = touchPositionX;
+            position = false;
+            e.targetTouches[0] = null;
+            e.targetTouches[1] = null;
+        }
+    });
     workSpace.addEventListener("dragover", (e) => {
         console.log('workspace dragover');
         e.preventDefault();
