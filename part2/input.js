@@ -3,7 +3,7 @@ const targets = document.querySelectorAll('.target');
 let positionX;
 let positionY;
 let zoom = null;
-let terr = true;
+//let terr = true;
 let touchPositionX;
 let touchPositionY;
 let position = false;
@@ -70,7 +70,7 @@ for (let i = 0; i < targets.length; i++) {
 
         if (touch1) {
             console.log('target ' + i + ' touchmove 1');
-            if (touch2 && terr) {
+            if (touch2) {
                 console.log('target ' + i + ' touchmove 2');
                 const scale = Math.hypot(touch1.pageX - touch2.pageX, touch1.pageY - touch2.pageY);
                 if (zoom) {
@@ -112,10 +112,10 @@ for (let i = 0; i < targets.length; i++) {
 
         if (e.targetTouches.length == 2) {
             workSpace.ontouchmove = null;
-            terr = false;
+            //terr = false;
         }
         else {
-            terr = true;
+            //terr = true;
         }
         position = false;
     });
